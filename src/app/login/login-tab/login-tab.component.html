@@ -1,0 +1,14 @@
+<mat-card class="login-tab-content">
+  <mat-card-content class="display-flex-column" (keyup.enter)="!loginDisabled() ? login() : null">
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="email" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" [(ngModel)]="password" required [type]="hidePassword ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="login()" [disabled]="loginDisabled()">Login</button>
+  </mat-card-actions>
+</mat-card>

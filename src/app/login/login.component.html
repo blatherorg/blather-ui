@@ -1,0 +1,12 @@
+<div class="login-tab-wrapper">
+  <mat-tab-group [selectedIndex]="showTabIndex" (selectedIndexChange)="tabChange($event)">
+    <mat-tab label="Login">
+      <app-login-tab></app-login-tab>
+    </mat-tab>
+    <mat-tab label="Register">
+      <app-register-tab></app-register-tab>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<router-outlet></router-outlet>

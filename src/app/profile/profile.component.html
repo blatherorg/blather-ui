@@ -1,0 +1,51 @@
+<div>
+  <mat-card>
+    <mat-card-subtitle>{{user.handle}}</mat-card-subtitle>
+    <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
+  </mat-card>
+  <button *ngIf="loggedInUserProfile" mat-button (click)="editProfile()">Edit Profile</button>
+</div>
+<div class="feed-wrapper">
+  <div *ngIf="loggedInUserProfile" class="post-content">
+    <mat-form-field class="post-form-field">
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="2"
+        placeholder="Message"
+        [(ngModel)]="message">
+      </textarea>
+    </mat-form-field>
+    <button mat-button (click)="postBlat()">Post</button>
+  </div>
+  <mat-divider class="margin-bottom-15"></mat-divider>
+
+  <div class="trending-feed-wrapper">
+    <div class="trending-following-wrapper">
+      <app-trending class="trending-content"></app-trending>
+      <app-following class="following-content"></app-following>
+    </div>
+    <div class="feed-content">
+      <div class="app-title">Feed</div>
+      <cdk-virtual-scroll-viewport itemSize="50" class="feed-list">
+        <div *cdkVirtualFor="let blat of blatz" class="feed-list-item">
+          <div class="feed-list-item-content">
+            <div class="display-flex-row align-items-center">
+              <div class="font-18 margin-right-15">
+                {{ blat.creator }}
+              </div>
+              <div class="font-14 gray">
+                {{ blat.timestamp * 1000 | date:'medium' }}
+              </div>
+            </div>
+            <div class="font-14">
+              {{ blat.message }}
+            </div>
+          </div>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </div>
+</div>

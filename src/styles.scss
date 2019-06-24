@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$primary-color: #3f51b5;
+
+.flex-1-1-auto {
+    flex: 1 1 auto;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.display-flex-column {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.display-flex-row {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.tab-active {
+  color: #ffffff !important;
+  background-color: $primary-color;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.app-title {
+  @extend .font-24;
+  margin-bottom: 10px;
+}
+
+.gray {
+  color: gray;
+}
+
+.margin-right-15 {
+  margin-right: 15px;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px !important;
+}
+
+// Material overrides
+mat-list {
+  padding: 0 !important;
+}
+
+.notification {
+  width: 100vw;
+  max-width: 100vw !important;
+  margin: 64px 0 0 !important;
+  border-radius: 0 !important;
+  color: white;
+}
+
+.success-notification {
+  @extend .notification;
+  background-color: #00b300;
+}
+
+.info-notification {
+  @extend .notification;
+  background-color: #666666;
+}
+
+.warning-notification {
+  @extend .notification;
+  background-color: #b35900;
+}
+
+.danger-notification {
+  @extend .notification;
+  background-color: #b30000;
+}
+
+.notification-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+mat-form-field {
+  font-size: 18px !important;
+}

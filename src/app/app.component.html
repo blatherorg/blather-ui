@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span [routerLink]="'feed'">Blather</span>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item [routerLink]="'profile'">Profile</button>
+    <button mat-menu-item [routerLink]="'users'">Users</button>
+    <button mat-menu-item (click)="openChangePasswordDialog()">Change Password</button>
+    <button mat-menu-item (click)="logoutServiceCall()">Logout</button>
+  </mat-menu>
+  <span class="flex-1-1-auto"></span>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="loggedIn">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>

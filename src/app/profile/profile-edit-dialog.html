@@ -1,0 +1,19 @@
+<h1 mat-dialog-title> Edit Profile</h1>
+<div mat-dialog-content>
+  <p>First Name</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.firstName">
+  </mat-form-field>
+  <p>Last Name</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.lastName">
+  </mat-form-field>
+  <p>Email</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.email">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClick()" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>

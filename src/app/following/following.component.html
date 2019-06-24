@@ -1,0 +1,9 @@
+<div class="app-title">Following</div>
+<mat-list>
+  <mat-list-item *ngFor="let follow of usersIFollow" class="list-item-height-18">
+    <div mat-line>
+      {{ follow.handle }}
+    </div>
+  </mat-list-item>
+</mat-list>
+

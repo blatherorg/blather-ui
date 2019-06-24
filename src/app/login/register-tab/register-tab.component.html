@@ -1,0 +1,23 @@
+<mat-card class="login-tab-content">
+  <mat-card-content class="display-flex-column" (keyup.enter)="!registerDisabled() ? register() : null">
+    <mat-form-field>
+      <input matInput placeholder="Handle" [(ngModel)]="newUser.handle" required >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="newUser.email" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="First Name" [(ngModel)]="newUser.firstName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" [(ngModel)]="newUser.lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" [(ngModel)]="newUser.password" required [type]="hidePassword ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="register()" [disabled]="registerDisabled()">Register</button>
+  </mat-card-actions>
+</mat-card>
